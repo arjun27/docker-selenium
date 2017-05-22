@@ -29,7 +29,7 @@ RUN mkdir -p /opt/selenium
 RUN curl http://selenium-release.storage.googleapis.com/2.48/selenium-server-standalone-2.48.2.jar -o /opt/selenium/selenium-server-standalone.jar
 
 # Install Chrome Driver
-RUN curl http://chromedriver.storage.googleapis.com/2.20/chromedriver_linux64.zip -o /opt/selenium/chromedriver_linux64.zip
+RUN curl http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip -o /opt/selenium/chromedriver_linux64.zip
 RUN cd /opt/selenium; unzip /opt/selenium/chromedriver_linux64.zip; rm -rf chromedriver_linux64.zip;
 
 ENV DISPLAY :20
