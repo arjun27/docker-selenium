@@ -22,6 +22,10 @@ RUN wget https://github.com/webnicer/chrome-downloads/raw/master/x64.deb/${CHROM
     apt-get clean && \
     rm ${CHROME_PACKAGE}
 
+# Enable WebGL for Chrome
+RUN apt-get install libosmesa6
+RUN ln -s /usr/lib/x86_64-linux-gnu/libOSMesa.so.6 /opt/google/chrome/libosmesa.so
+
 # Disable the SUID sandbox so that chrome can launch without being in a privileged container
 RUN dpkg-divert --add --rename --divert /opt/google/chrome/google-chrome.real /opt/google/chrome/google-chrome
 RUN echo "#!/bin/bash\nexec /opt/google/chrome/google-chrome.real --disable-setuid-sandbox \"\$@\"" > /opt/google/chrome/google-chrome
