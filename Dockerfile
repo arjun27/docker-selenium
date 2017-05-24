@@ -44,4 +44,4 @@ COPY entrypoint.sh /opt/selenium/entrypoint.sh
 RUN chmod +x /opt/selenium/entrypoint.sh
 
 EXPOSE 4444
-CMD ["sh", "/opt/selenium/entrypoint.sh"]
+# CMD ["sh", "/opt/selenium/entrypoint.sh"]
