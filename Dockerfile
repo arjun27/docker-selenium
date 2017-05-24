@@ -41,6 +41,7 @@ RUN cd /opt/selenium; unzip /opt/selenium/chromedriver_linux64.zip; rm -rf chrom
 
 ENV DISPLAY :20
 COPY entrypoint.sh /opt/selenium/entrypoint.sh
+RUN chmod +x /opt/selenium/entrypoint.sh
 
 EXPOSE 4444
 CMD ["sh", "/opt/selenium/entrypoint.sh"]
